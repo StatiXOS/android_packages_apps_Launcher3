@@ -29,6 +29,8 @@ import android.app.Fragment;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -36,15 +38,18 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceFragment.OnPreferenceStartFragmentCallback;
 import androidx.preference.PreferenceFragment.OnPreferenceStartScreenCallback;
 import androidx.preference.PreferenceGroup.PreferencePositionCallback;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherFiles;
+import com.android.launcher3.LauncherTab;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
@@ -72,6 +77,8 @@ public class SettingsActivity extends Activity
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
 
     public static final String GRID_OPTIONS_PREFERENCE_KEY = "pref_grid_options";
+
+    public static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +118,8 @@ public class SettingsActivity extends Activity
             if (oldValue != newValue) {
                 c.getPackageManager().setComponentEnabledSetting(cn, newValue,
                         PackageManager.DONT_KILL_APP);
+            } else if (KEY_FEED_INTEGRATION.equals(key)) {
+                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
             }
         }
     }
@@ -240,6 +249,8 @@ public class SettingsActivity extends Activity
                     return false;
                 case GRID_OPTIONS_PREFERENCE_KEY:
                     return true;
+                case KEY_FEED_INTEGRATION:
+                     return LauncherAppState.getInstanceNoCreate().isSearchAppAvailable();
             }
 
             return true;
