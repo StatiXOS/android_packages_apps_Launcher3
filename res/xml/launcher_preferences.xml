@@ -57,6 +57,12 @@
         android:summary="@string/pref_qsb_show_summary"
         android:title="@string/pref_qsb_show_title"/>
 
+    <SwitchPreference
+         android:defaultValue="true"
+         android:key="pref_feed_integration"
+         android:persistent="true"
+         android:title="@string/settings_feed" />
+
     <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
         android:persistent="false"
