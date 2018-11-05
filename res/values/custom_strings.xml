@@ -42,4 +42,8 @@
 
     <!-- Preference default value -->
     <string name="pref_value_default" translatable="false">Default</string>
+
+    <!-- Hide QSB -->
+    <string name="pref_qsb_show_summary"></string>
+    <string name="pref_qsb_show_title">Show search widget</string>
 </resources>
