@@ -22,4 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="pref_qsb_show_title">Show search widget</string>
     <!-- Google Feed -->
     <string name="settings_feed">Enable Google feed integration</string>
+    <!-- Icon mask -->
+    <string name="legacy_icon_mask_title">Disable shape mask on legacy icons</string>
+    <string name="legacy_icon_mask_summary">Doesn\'t allow icons to be reshaped with adaptive icon mask. Icon pack must be reapplied after toggling</string>
 </resources>
