@@ -203,6 +203,10 @@ public class IconCache {
     }
 
     public Drawable getFullResIcon(LauncherActivityInfo info, boolean flattenDrawable) {
+        Drawable iconDrawable = mIconsHandler.getIconFromHandler(mContext, info);
+        if (iconDrawable != null) {
+            return iconDrawable;
+        }
         return mIconProvider.getIcon(info, mIconDpi, flattenDrawable);
     }
 
