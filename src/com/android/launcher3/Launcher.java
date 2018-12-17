@@ -115,6 +115,7 @@ import com.android.launcher3.popup.PopupContainerWithArrow;
 import com.android.launcher3.popup.PopupDataProvider;
 import com.android.launcher3.qsb.QsbContainerView;
 import com.android.launcher3.settings.SettingsActivity;
+import com.android.launcher3.quickspace.QuickSpaceView;
 import com.android.launcher3.states.InternalStateHandler;
 import com.android.launcher3.states.RotationHelper;
 import com.android.launcher3.touch.ItemClickHandler;
@@ -300,6 +301,9 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
     private LauncherTab mLauncherTab;
     private boolean mFeedIntegrationEnabled;
 
+    // QuickSpace
+    private QuickSpaceView mQuickSpace;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         RaceConditionTracker.onEvent(ON_CREATE_EVT, ENTER);
@@ -383,6 +387,8 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
 
         // For handling default keys
         setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
+
+        mQuickSpace = findViewById(R.id.reserved_container_workspace);
 
         mFeedIntegrationEnabled = isFeedIntegrationEnabled();
         mLauncherTab = new LauncherTab(this, mFeedIntegrationEnabled);
@@ -997,6 +1003,10 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
                 resumeCallbacks.get(i).onLauncherResume();
             }
             resumeCallbacks.clear();
+        }
+
+        if (mQuickSpace != null) {
+            mQuickSpace.onResume();
         }
 
         if (mFeedIntegrationEnabled) {
@@ -2006,11 +2016,11 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
     @Override
     public void bindScreens(IntArray orderedScreenIds) {
         // Make sure the first screen is always at the start.
-        if (Utilities.showQsbWidget(this) &&
+        if (Utilities.showQuickspace(this) &&
                 orderedScreenIds.indexOf(Workspace.FIRST_SCREEN_ID) != 0) {
             orderedScreenIds.removeValue(Workspace.FIRST_SCREEN_ID);
             orderedScreenIds.add(0, Workspace.FIRST_SCREEN_ID);
-        } else if (!Utilities.showQsbWidget(this) && orderedScreenIds.isEmpty()) {
+        } else if (!Utilities.showQuickspace(this) && orderedScreenIds.isEmpty()) {
             // If there are no screens, we need to have an empty screen
             mWorkspace.addExtraEmptyScreen();
         }
@@ -2026,7 +2036,7 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
         int count = orderedScreenIds.size();
         for (int i = 0; i < count; i++) {
             int screenId = orderedScreenIds.get(i);
-            if (!Utilities.showQsbWidget(this) || screenId != Workspace.FIRST_SCREEN_ID) {
+            if (!Utilities.showQuickspace(this) || screenId != Workspace.FIRST_SCREEN_ID) {
                 // No need to bind the first screen, as its always bound.
                 mWorkspace.insertNewWorkspaceScreenBeforeEmptyScreen(screenId);
             }
@@ -2186,14 +2196,6 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
     }
 
     private View inflateAppWidget(LauncherAppWidgetInfo item) {
-        if (item.hasOptionFlag(LauncherAppWidgetInfo.OPTION_SEARCH_WIDGET)) {
-            item.providerName = QsbContainerView.getSearchComponentName(this);
-            if (item.providerName == null) {
-                getModelWriter().deleteItemFromDatabase(item);
-                return null;
-            }
-        }
-
         if (mIsSafeModeEnabled) {
             PendingAppWidgetHostView view =
                     new PendingAppWidgetHostView(this, item, mIconCache, true);
