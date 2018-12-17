@@ -143,7 +143,7 @@ public final class Utilities {
         IS_RUNNING_IN_TEST_HARNESS = true;
     }
 
-    public static final String QSB_SHOW = "pref_qsb_show";
+    public static final String DESKTOP_SHOW_QUICKSPACE = "pref_show_quickspace";
     private static final long WAIT_BEFORE_RESTART = 250;
 
     public static boolean isPropertyEnabled(String propertyName) {
@@ -156,8 +156,8 @@ public final class Utilities {
         return ri != null;
     }
 
-    public static boolean showQsbWidget(Context context) {
-         return getPrefs(context).getBoolean(QSB_SHOW, FeatureFlags.QSB_ON_FIRST_SCREEN);
+    public static boolean showQuickspace(Context context) {
+         return getPrefs(context).getBoolean(DESKTOP_SHOW_QUICKSPACE, true);
     }
 
     /**

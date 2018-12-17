@@ -441,8 +441,8 @@ public class LoaderCursor extends CursorWrapper {
             GridOccupancy screen = new GridOccupancy(countX + 1, countY + 1);
             if (item.screenId == Workspace.FIRST_SCREEN_ID) {
                 // Mark the first row as occupied (if the feature is enabled)
-                // in order to account for the QSB.
-                screen.markCells(0, 0, countX + 1, 1, Utilities.showQsbWidget(mContext));
+                // in order to account for the QuickSpace.
+                screen.markCells(0, 0, countX + 1, 1, Utilities.showQuickspace(mContext));
             }
             occupied.put(item.screenId, screen);
         }

@@ -287,10 +287,7 @@ public class QsbContainerView extends FrameLayout {
         }
 
         public boolean isQsbEnabled() {
-            if (!isInPreviewMode()) {
-                return Utilities.showQsbWidget(getActivity());
-            }
-            return true;
+            return false; //FeatureFlags.QSB_ON_FIRST_SCREEN replaced by QuickSpace
         }
 
         protected Bundle createBindOptions() {
