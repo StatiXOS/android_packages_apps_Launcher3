@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Process;
@@ -279,19 +280,14 @@ public abstract class BaseDraggingActivity extends BaseActivity
     }
 
     private void updateTheme(WallpaperColorInfo wallpaperColorInfo) {
-        ContentResolver resolver = this.getContentResolver();
-        final int systemTheme = Settings.System.getInt(resolver, SYSTEM_THEME, 0);
-        switch (systemTheme) {
-            case 1:
-                setTheme(R.style.AppTheme);
-                break;
-            case 2:
-            case 3:
-                setTheme(R.style.AppTheme_Dark);
-                break;
-            default:
-                setTheme(mThemeRes);
-                break;
+        final Configuration config = this.getResources().getConfiguration();
+        final boolean nightModeWantsDarkTheme = (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
+                == Configuration.UI_MODE_NIGHT_YES;
+        if (nightModeWantsDarkTheme) {
+            setTheme(wallpaperColorInfo.supportsDarkText() ? R.style.AppTheme_Dark_DarkText :
+                    R.style.AppTheme_Dark);
+        } else {
+            setTheme(mThemeRes);
         }
     }
 }
