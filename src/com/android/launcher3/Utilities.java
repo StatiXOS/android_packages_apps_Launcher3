@@ -175,7 +175,7 @@ public final class Utilities {
     }
 
     public static final String QSB_SHOW = "pref_qsb_show";
-    private static final long WAIT_BEFORE_RESTART = 250;
+    public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
