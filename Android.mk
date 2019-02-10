@@ -30,19 +30,6 @@ LOCAL_CERTIFICATE := platform
 include $(BUILD_PREBUILT)
 
 #
-# Prebuilt Google Feed library
-#
-include $(CLEAR_VARS)
-LOCAL_MODULE := libGoogleFeed
-LOCAL_MODULE_TAGS := optional
-LOCAL_PRIVATE_PLATFORM_APIS := true
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_SRC_FILES := libs/libGoogleFeed.jar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_CERTIFICATE := platform
-include $(BUILD_PREBUILT)
-
-#
 # Build rule for Launcher3 dependencies lib.
 #
 include $(CLEAR_VARS)
