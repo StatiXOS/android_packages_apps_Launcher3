@@ -20,34 +20,71 @@ import com.android.launcher3.Launcher.LauncherOverlay;
 import com.android.launcher3.Launcher.LauncherOverlayCallbacks;
 
 import com.google.android.libraries.gsa.launcherclient.LauncherClient;
-import com.google.android.libraries.gsa.launcherclient.ClientOptions;
 import com.google.android.libraries.gsa.launcherclient.LauncherClientCallbacks;
 
-public class LauncherTab {
-
+public class LauncherTab implements LauncherOverlay, LauncherClientCallbacks {
+    public final static String PREF_PERSIST_FLAGS = "pref_persistent_flags";
     public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
 
     private Launcher mLauncher;
+    private LauncherClient mClient;
+    private LauncherOverlayCallbacks mOverlayCallbacks;
+    boolean mAttached = false;
+    private int mFlags;
+    boolean mFlagsChanged = false;
 
-    private OverlayCallbackImpl mOverlayCallbacks;
-    private LauncherClient mLauncherClient;
-
-    private Workspace mWorkspace;
-
-    public LauncherTab(Launcher launcher, boolean enabled) {
+    public LauncherTab(Launcher launcher) {
         mLauncher = launcher;
-        mWorkspace = launcher.getWorkspace();
-
-        updateLauncherTab(enabled);
     }
 
-    protected void updateLauncherTab(boolean enabled) {
-        mOverlayCallbacks = new OverlayCallbackImpl(mLauncher);
-        mLauncherClient = new LauncherClient(mLauncher, mOverlayCallbacks, new ClientOptions(enabled ? 1 : 0));
-        mOverlayCallbacks.setClient(mLauncherClient);
+    public void setClient(LauncherClient client) {
+        mClient = client;
     }
 
-    protected LauncherClient getClient() {
-        return mLauncherClient;
+    @Override
+    public void onServiceStateChanged(boolean overlayAttached) {
+        if (overlayAttached != mAttached) {
+            mAttached = overlayAttached;
+            mLauncher.setLauncherOverlay(overlayAttached ? this : null);
+        }
+    }
+
+    @Override
+    public void onOverlayScrollChanged(float n) {
+        if (mOverlayCallbacks != null) {
+            mOverlayCallbacks.onScrollChanged(n);
+        }
+    }
+
+    @Override
+    public void onScrollChange(float progress, boolean rtl) {
+        mClient.updateMove(progress);
+    }
+
+    @Override
+    public void onScrollInteractionBegin() {
+        mClient.startMove();
+    }
+
+    @Override
+    public void onScrollInteractionEnd() {
+        mClient.endMove();
+    }
+
+    @Override
+    public void setOverlayCallbacks(LauncherOverlayCallbacks cb) {
+        mOverlayCallbacks = cb;
+    }
+
+    @Override
+    public void setPersistentFlags(int flags) {
+        //flags = 8 | 16; //Always enable app drawer Google style search bar
+
+        flags &= (8 | 16);
+        if (flags != mFlags) {
+            mFlagsChanged = true;
+            mFlags = flags;
+            Utilities.getDevicePrefs(mLauncher).edit().putInt(PREF_PERSIST_FLAGS, flags).apply();
+        }
     }
 }
