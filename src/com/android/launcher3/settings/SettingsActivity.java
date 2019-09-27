@@ -92,8 +92,10 @@ public class SettingsActivity extends FragmentActivity
         Utilities.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
     }
 
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (Utilities.KEY_DT_GESTURE.equals(key)) {
                 Utilities.restart(this);
    }
 
