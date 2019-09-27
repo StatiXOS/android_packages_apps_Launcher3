@@ -31,5 +31,9 @@
     <string name="suggestion_pref_screen_title">Suggestions</string>
     <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
 
+    <!-- Double tap to sleep toggle -->
+    <string name="pref_dt_gesture_title">Put phone to sleep</string>
+    <string name="pref_dt_gesture_summary"When you double tap an empty space on the Home screen></string>
+
     <string name="state_loading">Applying\u2026</string>
 </resources>
