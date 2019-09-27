@@ -31,4 +31,5 @@
     <string name="suggestion_pref_screen_title">Suggestions</string>
     <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
 
+    <string name="state_loading">Applying\u2026</string>
 </resources>
