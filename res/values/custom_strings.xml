@@ -22,4 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="pref_qsb_show_title">Show search widget</string>
     <!-- Google Feed -->
     <string name="settings_feed">Enable Google feed integration</string>
+
+    <!-- QSB -->
+    <string name="label_search">Search</string>
+    <string name="label_voice_search">Voice search</string>
+
 </resources>
