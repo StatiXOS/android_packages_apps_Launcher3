@@ -59,6 +59,8 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.animation.Interpolator;
 
+import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
+
 import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.compat.ShortcutConfigActivityInfo;
 import com.android.launcher3.dragndrop.FolderAdaptiveIcon;
