@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 public class IconPackProvider {
-    public static final String PREF_ICON_PACK = "pref_iconPackPackage";
+    public static final String PREF_ICON_PACK = "selected_icon_pack";
 
     private static Map<String, IconPack> iconPacks = new ArrayMap<>();
     public static final String ICON_MASK_TAG = "iconmask";
@@ -29,7 +30,7 @@ public class IconPackProvider {
     }
 
     public static String getCurrentIconPack(Context context) {
-        return Utilities.getPrefs(context).getString(PREF_ICON_PACK, "");
+        return Settings.System.getString(context.getContentResolver(), PREF_ICON_PACK);
     }
 
     public static IconPack loadAndGetIconPack(Context context) {

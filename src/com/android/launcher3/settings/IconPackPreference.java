@@ -18,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import androidx.preference.ListPreference;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,8 +27,9 @@ import java.util.Map;
 import com.android.launcher3.IconPackProvider;
 import com.android.launcher3.R;
 
+import com.statix.support.preferences.SystemSettingListPreference;
 
-public class IconPackPreference extends ListPreference {
+public class IconPackPreference extends SystemSettingListPreference {
 
     private final PackageManager pm;
 
