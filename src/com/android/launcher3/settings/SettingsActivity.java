@@ -43,6 +43,7 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.graphics.GridOptionsProvider;
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
+import com.android.launcher3.settings.IconPackPreference;
 import com.android.launcher3.util.SecureSettingsObserver;
 
 import androidx.preference.Preference;
@@ -192,6 +193,14 @@ public class SettingsActivity extends Activity
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     Utilities.restart(getActivity());
                     return true;
+                }
+            });
+
+            Preference mIconPackPref = (IconPackPreference) findPreference("selected_icon_pack");
+            mIconPackPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                   Utilities.restart(getActivity());
+                   return true;
                 }
             });
         }

@@ -23,11 +23,8 @@ public class CustomIconProvider extends IconProvider {
             Drawable iconMask = iconPack.getIcon(info, null, info.getLabel());
             if (iconMask != null) {
                 return iconMask;
-            } else {
-                return icon;
             }
-        } else {
-            return icon;
         }
+        return icon;
     }
 }
