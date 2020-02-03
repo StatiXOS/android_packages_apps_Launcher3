@@ -18,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import androidx.preference.ListPreference;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,8 +27,9 @@ import java.util.Map;
 import com.android.launcher3.IconPackProvider;
 import com.android.launcher3.R;
 
+import com.statix.support.preferences.SystemSettingListPreference;
 
-public class IconPackPreference extends ListPreference {
+public class IconPackPreference extends SystemSettingListPreference {
 
     private final PackageManager pm;
 
@@ -78,13 +77,13 @@ public class IconPackPreference extends ListPreference {
         final Map<String, IconPackInfo> packages = loadAvailableIconPacks();
         String[] packageNames = new String[packages.size()+1];
         CharSequence[] labels = new CharSequence[packages.size()+1];
-        String defaultLabel = "None";
         packageNames[0] = "";
-        labels[0] = defaultLabel;
+        labels[0] = "None";
         int i = 1;
         for (Map.Entry<String, IconPackInfo> entry : packages.entrySet()) {
             packageNames[i] = entry.getKey();
             labels[i] = entry.getValue().label;
+            i++;
         }
         setEntries(labels);
         setEntryValues(packageNames);

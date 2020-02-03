@@ -18,8 +18,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.android.launcher3.settings.IconPackPreference
-        android:key="pref_iconPackPackage"
+        android:key="pref_icon_pack"
         android:title="@string/icon_pack"
+        android:defaultValue="None"
         android:summary="%s"
         android:persistent="true" />
 
