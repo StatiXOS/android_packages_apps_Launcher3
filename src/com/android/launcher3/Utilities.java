@@ -21,8 +21,8 @@ import static com.android.launcher3.ItemInfoWithIcon.FLAG_ICON_BADGED;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
-import android.app.ProgressDialog;
 import android.app.Person;
+import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -53,7 +53,6 @@ import android.os.DeadObjectException;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.SystemClock;
 import android.os.TransactionTooLargeException;
 import android.provider.Settings;
 import android.text.Spannable;
@@ -165,12 +164,11 @@ public final class Utilities {
     public static boolean IS_RUNNING_IN_TEST_HARNESS =
                     ActivityManager.isRunningInTestHarness();
 
+    private static final long WAIT_BEFORE_RESTART = 250;
+
     public static void enableRunningInTestHarnessForTests() {
         IS_RUNNING_IN_TEST_HARNESS = true;
     }
-
-    public static final String QSB_SHOW = "pref_qsb_show";
-    private static final long WAIT_BEFORE_RESTART = 250;
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -180,10 +178,6 @@ public final class Utilities {
         ResolveInfo ri = context.getPackageManager().resolveActivity(
                 PackageManagerHelper.getStyleWallpapersIntent(context), 0);
         return ri != null;
-    }
-
-    public static boolean showQsbWidget(Context context) {
-         return getPrefs(context).getBoolean(QSB_SHOW, FeatureFlags.QSB_ON_FIRST_SCREEN);
     }
 
     /**
@@ -783,7 +777,6 @@ public final class Utilities {
             return mSize;
         }
     }
-
     static boolean hasFeedIntegration(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_FEED_INTEGRATION, true);
