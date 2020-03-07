@@ -123,6 +123,10 @@ public abstract class BaseFlags {
             "ASSISTANT_GIVES_LAUNCHER_FOCUS", false,
             "Allow Launcher to handle nav bar gestures while Assistant is running over it");
 
+    public static final TogglableFlag GRID_OPTIONS = new TogglableFlag(
+            "GRID_OPTIONS", true,
+            "Allow changing grid size on the homescreen");
+
     public static void initialize(Context context) {
         // Avoid the disk read for user builds
         if (Utilities.IS_DEBUG_DEVICE) {
