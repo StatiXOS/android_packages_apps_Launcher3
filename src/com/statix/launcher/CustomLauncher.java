@@ -16,15 +16,10 @@
 package com.statix.launcher;
 
 import com.android.launcher3.Launcher;
-import com.android.launcher3.LauncherCallbacks;
 
 public class CustomLauncher extends Launcher {
 
     public CustomLauncher() {
         setLauncherCallbacks(new CustomLauncherCallbacks(this));
-    }
-
-    public LauncherCallbacks getLauncherCallbacks() {
-        return mLauncherCallbacks;
     }
 }
