@@ -512,10 +512,10 @@ public class LauncherPreviewRenderer {
             }
 
             // Setup search view
-            SearchUiManager searchUiManager =
-                    mRootView.findViewById(R.id.search_container_all_apps);
-            mRootView.findViewById(R.id.apps_view).setTranslationY(
-                    mDp.heightPx - searchUiManager.getScrollRangeDelta(mInsets));
+            //SearchUiManager searchUiManager =
+            //        mRootView.findViewById(R.id.search_container_all_apps);
+            //mRootView.findViewById(R.id.apps_view).setTranslationY(
+            //        mDp.heightPx - searchUiManager.getScrollRangeDelta(mInsets));
 
             measureView(mRootView, mDp.widthPx, mDp.heightPx);
             dispatchVisibilityAggregated(mRootView, true);

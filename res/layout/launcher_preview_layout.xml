@@ -41,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <include
+<!--        <include
             android:id="@id/search_container_all_apps"
-            layout="@layout/search_container_all_apps"/>
+            layout="@layout/search_container_all_apps"/> -->
 
     </com.android.launcher3.InsettableFrameLayout>
 
