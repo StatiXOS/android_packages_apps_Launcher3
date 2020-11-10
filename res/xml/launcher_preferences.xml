@@ -56,4 +56,11 @@
         android:title="Developer Options"
         android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
 
+    <SwitchPreference
+        android:key="pref_doubletap_sleep"
+        android:title="@string/title_doubletap_sleep"
+        android:summary="@string/msg_doubletap_sleep"
+        android:defaultValue="true" 
+        android:persistent="true" />
+
 </androidx.preference.PreferenceScreen>

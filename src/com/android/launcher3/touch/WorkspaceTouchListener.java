@@ -25,6 +25,7 @@ import static com.android.launcher3.LauncherState.NORMAL;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_WORKSPACE_LONGPRESS;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.os.PowerManager;
@@ -39,6 +40,7 @@ import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.CellLayout;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.Workspace;
 import com.android.launcher3.dragndrop.DragLayer;
 import com.android.launcher3.testing.TestLogging;
@@ -67,10 +69,12 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
     private final Workspace mWorkspace;
     private final PointF mTouchDownPoint = new PointF();
     private final float mTouchSlop;
+    private boolean mDoubleTapEnabled;
 
     private int mLongPressState = STATE_CANCELLED;
 
     private final PowerManager mPm;
+    private static final String DOUBLETAP_SLEEP_KEY = "pref_doubletap_sleep";
 
     private final GestureDetector mGestureDetector;
 
@@ -81,7 +85,13 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
         // likely to cause movement.
         mTouchSlop = 2 * ViewConfiguration.get(launcher).getScaledTouchSlop();
         mPm = (PowerManager) workspace.getContext().getSystemService(Context.POWER_SERVICE);
+        mDoubleTapEnabled = isDoubleTapEnabled();
         mGestureDetector = new GestureDetector(workspace.getContext(), this);
+    }
+
+    @Override
+    private boolean isDoubleTapEnabled (Context context) {
+        return Utilities.getPrefs(context).getBoolean(DOUBLETAP_SLEEP_KEY, true);
     }
 
     @Override
@@ -189,7 +199,9 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
 
     @Override
     public boolean onDoubleTap(MotionEvent event) {
-        mPm.goToSleep(event.getEventTime());
-        return true;
-    }
+        if (mDoubleTapEnabled) {
+           mPm.goToSleep(event.getEventTime());
+           return true;
+       }
+   }
 }
