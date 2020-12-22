@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4adcf3f0_65b5ac3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-12-22T17:54:43Z",
+      "side": 1,
+      "message": "\u003e Patch Set 1: Verified-1 Code-Review-2\n\u003e \n\u003e why?\n\nday to day usefulness is debatable and it looks a bit too crowded down there. i actually dont care about pushing this to prod tbh imma pick it for my builds",
+      "revId": "022654fc11d9ac16e79b920c236dd3682d523acb",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
