@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e826cd95_c5acf031",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-12-26T00:09:41Z",
+      "side": 1,
+      "message": "I honestly don\u0027t really give a shit either way",
+      "revId": "f80ac3f4efbf39ee2341e26420bb27c89d7f7590",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
