@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2016 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources>
+    <string name="title_show_google_app">Swipe to access Google app</string>
+    <string name="msg_minus_one_on_left">From Home screen, swipe left to open Google app</string>
+    <string name="msg_minus_one_on_right">From Home Screen, swipe right to open Google app</string>
+    <string name="suggestion_pref_screen_title">Suggestions</string>
+    <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
+    <string name="pref_dt_gesture_title">Put phone to sleep</string>
+    <string name="pref_dt_gesture_summary">When you double tap an empty space on the Home screen</string>
+</resources>

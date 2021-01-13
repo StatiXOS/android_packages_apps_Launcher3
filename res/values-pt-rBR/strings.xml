@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <skip/>
+    <string name="app_name">Tela de início 3</string>
+    <string name="work_folder_name">Trabalho</string>
+    <string name="activity_not_found">O app não está instalado.</string>
+    <string name="activity_not_available">O app não está disponível</string>
+    <string name="safemode_shortcut_error">App transferido por download desativado no modo de segurança</string>
+    <string name="safemode_widget_error">Widgets desativados no modo de segurança</string>
+    <string name="shortcut_not_available">O atalho não está disponível</string>
+    <string name="home_screen">Tela inicial</string>
+    <string name="custom_actions">Ações personalizadas</string>
+    <string name="long_press_widget_to_add">Toque e pressione para selecionar um widget.</string>
+    <string name="long_accessible_way_to_add">Toque duas vezes e segure para selecionar um widget ou usar ações personalizadas.</string>
+    <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <string name="widget_accessible_dims_format">%1$d de largura por %2$d de altura</string>
+    <string name="add_item_request_drag_hint">Toque e mantenha pressionado para mover manualmente</string>
+    <string name="place_automatically">Adicionar automaticamente</string>
+    <string name="all_apps_search_bar_hint">Pesquisar apps</string>
+    <string name="all_apps_loading_message">Carregando apps…</string>
+    <string name="all_apps_no_search_results">Nenhum app encontrado que corresponda a \"<xliff:g id="query" example="Android">%1$s</xliff:g>\"</string>
+    <string name="all_apps_search_market_message">Pesquisar por mais apps</string>
+    <string name="label_application">App</string>
+    <string name="notifications_header">Notificações</string>
+    <string name="long_press_shortcut_to_add">Toque e segure para selecionar um atalho.</string>
+    <string name="long_accessible_way_to_add_shortcut">Toque duas vezes na tela e segure para selecionar um atalho ou usar ações personalizadas.</string>
+    <skip/>
+    <string name="out_of_space">Não há mais espaço na tela inicial.</string>
+    <string name="hotseat_out_of_space">Sem espaço na bandeja de favoritos</string>
+    <string name="all_apps_button_label">Lista de apps</string>
+    <string name="all_apps_button_personal_label">Lista de apps pessoais</string>
+    <string name="all_apps_button_work_label">Lista de apps profissionais</string>
+    <string name="all_apps_home_button_label">Início</string>
+    <string name="remove_drop_target_label">Remover</string>
+    <string name="uninstall_drop_target_label">Desinstalar</string>
+    <string name="app_info_drop_target_label">Informações do app</string>
+    <string name="install_drop_target_label">Instalar</string>
+    <string name="dismiss_prediction_label">Não sugerir esse app</string>
+    <string name="pin_prediction">Fixar previsão</string>
+    <skip/>
+    <string name="permlab_install_shortcut">instalar atalhos</string>
+    <string name="permdesc_install_shortcut">Permite que um app adicione atalhos sem intervenção do usuário.</string>
+    <string name="permlab_read_settings">ler configurações e atalhos da tela inicial</string>
+    <string name="permdesc_read_settings">Permite que o app leia as configurações e os atalhos na tela inicial.</string>
+    <string name="permlab_write_settings">gravar configurações e atalhos da tela inicial</string>
+    <string name="permdesc_write_settings">Permite que o app altere as configurações e os atalhos na tela inicial.</string>
+    <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> não tem permissão para fazer chamadas</string>
+    <skip/>
+    <string name="gadget_error_text">Problema ao carregar o widget</string>
+    <string name="gadget_setup_text">Configuração</string>
+    <string name="uninstall_system_app_text">Este é um app do sistema e não pode ser desinstalado.</string>
+    <string name="folder_hint_text">Editar nome</string>
+    <string name="disabled_app_label"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g> desativado</string>
+    <plurals name="dotted_app_label">
+        <item quantity="one">O app <xliff:g id="app_name" example="Messenger">%1$s</xliff:g> tem <xliff:g id="notification_count" example="1">%2$d</xliff:g> notificação</item>
+        <item quantity="other">O app <xliff:g id="app_name" example="Messenger">%1$s</xliff:g> tem <xliff:g id="notification_count" example="3">%2$d</xliff:g> notificações</item>
+    </plurals>
+    <skip/>
+    <string name="default_scroll_format">Página %1$d de %2$d</string>
+    <string name="workspace_scroll_format">Tela inicial %1$d de %2$d</string>
+    <string name="workspace_new_page">Nova página na tela inicial</string>
+    <string name="folder_opened">Pasta aberta, <xliff:g id="width" example="5">%1$d</xliff:g> por <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <string name="folder_tap_to_close">Toque para fechar a pasta</string>
+    <string name="folder_tap_to_rename">Toque para salvar o novo nome</string>
+    <string name="folder_closed">Pasta fechada</string>
+    <string name="folder_renamed">Pasta renomeada para <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="folder_name_format_exact">Pasta: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> itens</string>
+    <string name="folder_name_format_overflow">Pasta: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> ou mais itens</string>
+    <string name="widget_button_text">Widgets</string>
+    <string name="wallpaper_button_text">Planos de fundo</string>
+    <string name="styles_wallpaper_button_text">Estilos e planos de fundo</string>
+    <string name="settings_button_text">Config. tela inicial</string>
+    <string name="msg_disabled_by_admin">Desativado pelo administrador</string>
+    <string name="allow_rotation_title">Permitir rotação da tela inicial</string>
+    <string name="allow_rotation_desc">Quando o smartphone for girado</string>
+    <string name="notification_dots_title">Pontos de notificação</string>
+    <string name="notification_dots_desc_on">Ativado</string>
+    <string name="notification_dots_desc_off">Desativado</string>
+    <string name="title_missing_notification_access">Acesso a notificações necessário</string>
+    <string name="msg_missing_notification_access">Para mostrar pontos de notificação, ative as notificações de app para <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <string name="title_change_settings">Alterar configurações</string>
+    <string name="notification_dots_service_title">Mostrar pontos de notificação</string>
+    <string name="auto_add_shortcuts_label">Adicionar ícones de apps à tela inicial</string>
+    <string name="auto_add_shortcuts_description">Para novos apps</string>
+    <string name="package_state_unknown">Desconhecido</string>
+    <string name="abandoned_clean_this">Remover</string>
+    <string name="abandoned_search">Pesquisar</string>
+    <string name="abandoned_promises_title">Este app não está instalado</string>
+    <string name="abandoned_promise_explanation">O app deste ícone não está instalado. Você pode remover o ícone, ou procurar o app e instalá-lo manualmente.</string>
+    <string name="app_downloading_title">Fazendo download de <xliff:g id="name" example="Messenger">%1$s</xliff:g>, <xliff:g id="progress" example="30%">%2$s</xliff:g> concluído</string>
+    <string name="app_waiting_download_title">Aguardando instalação de <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="widgets_bottom_sheet_title">Widgets do <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="widgets_list">Lista de widgets</string>
+    <string name="widgets_list_closed">Lista de widgets fechada</string>
+    <string name="action_add_to_workspace">Adicionar à tela inicial</string>
+    <string name="action_move_here">Mover item para cá</string>
+    <string name="item_added_to_workspace">Item adicionado à tela inicial</string>
+    <string name="item_removed">Item removido</string>
+    <string name="undo">Desfazer</string>
+    <string name="action_move">Mover item</string>
+    <string name="move_to_empty_cell">Mover para a linha <xliff:g id="number" example="1">%1$s</xliff:g>, coluna <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="move_to_position">Mover para a posição <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="move_to_hotseat_position">Mover para a posição <xliff:g id="number" example="1">%1$s</xliff:g> dos favoritos</string>
+    <string name="item_moved">Item movido</string>
+    <string name="add_to_folder">Adicionar à pasta: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="add_to_folder_with_app">Adicionar à pasta com <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="added_to_folder">Item adicionado à pasta</string>
+    <string name="create_folder_with">Criar pasta com: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <string name="folder_created">Pasta criada</string>
+    <string name="action_move_to_workspace">Mover para a tela inicial</string>
+    <string name="action_resize">Redimensionar</string>
+    <string name="action_increase_width">Aumentar largura</string>
+    <string name="action_increase_height">Aumentar altura</string>
+    <string name="action_decrease_width">Diminuir largura</string>
+    <string name="action_decrease_height">Diminuir altura</string>
+    <string name="widget_resized">Widget redimensionado para a largura <xliff:g id="number" example="2">%1$s</xliff:g>, altura <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="action_deep_shortcut">Atalhos</string>
+    <string name="shortcuts_menu_with_notifications_description">Atalhos e notificações</string>
+    <string name="action_dismiss_notification">Dispensar</string>
+    <string name="accessibility_close">Fechar</string>
+    <string name="notification_dismissed">Notificação dispensada</string>
+    <string name="all_apps_personal_tab">Pessoais</string>
+    <string name="all_apps_work_tab">Trabalho</string>
+    <string name="work_profile_toggle_label">Perfil de trabalho</string>
+    <string name="work_profile_edu_personal_apps">Os dados pessoais ficam separados e ocultos dos apps de trabalho</string>
+    <string name="work_profile_edu_work_apps">Os dados de apps de trabalho ficam visíveis para seu administrador de TI</string>
+    <string name="work_profile_edu_next">Próxima</string>
+    <string name="work_profile_edu_accept">Ok</string>
+    <string name="work_apps_paused_title">O perfil de trabalho está pausado</string>
+    <string name="work_apps_paused_body">Apps de trabalho não podem enviar notificações, usar a bateria nem acessar a localização</string>
+    <string name="work_apps_paused_content_description">O perfil de trabalho está pausado. Apps de trabalho não podem enviar notificações, usar a bateria nem acessar a localização</string>
+    <string name="work_switch_tip">Pausar apps e notificações de trabalho</string>
+    <string name="remote_action_failed">Falha: <xliff:g id="what" example="Pause">%1$s</xliff:g></string>
+</resources>
