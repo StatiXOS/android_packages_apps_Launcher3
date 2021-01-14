@@ -15,5 +15,7 @@
 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="?attr/popupColorPrimary" />
+    <solid android:color="?attr/AppDrawerElementsScrimBlurDisabledColor" />
+    <solid android:color="?attr/allAppsInterimScrimAlpha" />
     <corners android:radius="24.0dp" />
 </shape>
