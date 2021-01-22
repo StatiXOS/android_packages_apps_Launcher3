@@ -17,11 +17,11 @@
 */
 -->
 <resources>
-    <string name="title_show_google_app">Swipe to access Google app</string>
-    <string name="msg_minus_one_on_left">From Home screen, swipe left to open Google app</string>
-    <string name="msg_minus_one_on_right">From Home Screen, swipe right to open Google app</string>
-    <string name="suggestion_pref_screen_title">Suggestions</string>
-    <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
-    <string name="pref_dt_gesture_title">Put phone to sleep</string>
-    <string name="pref_dt_gesture_summary">When you double tap an empty space on the Home screen</string>
+    <string name="title_show_google_app">Проведите по экрану, чтобы открыть приложение Google</string>
+    <string name="msg_minus_one_on_left">На главном экране проведите пальцем влево, чтобы открыть приложение Google</string>
+    <string name="msg_minus_one_on_right">На главном экране проведите пальцем вправо, чтобы открыть приложение Google</string>
+    <string name="suggestion_pref_screen_title">Предложения</string>
+    <string name="suggestion_pref_screen_desc">Для предложений всех приложений и главного экрана</string>
+    <string name="pref_dt_gesture_title">Перевести телефон в режим сна</string>
+    <string name="pref_dt_gesture_summary">Когда вы дважды касаетесь пустого места на главном экране</string>
 </resources>
