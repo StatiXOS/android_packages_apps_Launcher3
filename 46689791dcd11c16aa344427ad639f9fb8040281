@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f2a445a_94d4d703",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-03-12T04:25:09Z",
+      "side": 1,
+      "message": "Okay so the reason why I abandoned this commit in the first place was cause back when I tried it — even though its supposed to limit the amount of blur in certain areas — it caused intense stutters on mata. However, these stutters are no where to be found now. Perhaps cause we properly did the kernel this time (not to mention the added rice) and there\u0027s now even a noticeable lag reduction in the areas where this commit aims to limit the blur depth. Take my +2 with this one 😊",
+      "revId": "46689791dcd11c16aa344427ad639f9fb8040281",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
