@@ -36,13 +36,9 @@
 
         <!-- The workspace contains 5 screens of cells -->
         <!-- DO NOT CHANGE THE ID -->
-        <com.android.launcher3.Workspace
+        <include
             android:id="@+id/workspace"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:theme="@style/HomeScreenElementTheme"
-            launcher:pageIndicator="@+id/page_indicator" />
+            layout="@layout/workspace" />
 
         <!-- DO NOT CHANGE THE ID -->
         <include
