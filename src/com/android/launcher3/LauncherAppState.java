@@ -182,7 +182,7 @@ public class LauncherAppState implements SafeCloseable {
         mIconProvider = new LauncherIconProvider(context);
         mIconCache = new IconCache(mContext, mInvariantDeviceProfile,
                 iconCacheFileName, mIconProvider);
-        mModel = new LauncherModel(context, this, mIconCache, new AppFilter(mContext),
+        mModel = new LauncherModel(context, this, mIconCache, AppFilter.newInstance(mContext),
                 PackageManagerHelper.INSTANCE.get(context), iconCacheFileName != null);
         mOnTerminateCallback.add(mIconCache::close);
         mOnTerminateCallback.add(mModel::destroy);
