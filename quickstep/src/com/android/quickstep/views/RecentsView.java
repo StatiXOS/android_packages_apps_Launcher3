@@ -3054,6 +3054,7 @@ public abstract class RecentsView<
         setEnableFreeScroll(true);
         setEnableDrawingLiveTile(mCurrentGestureEndTarget == GestureState.GestureEndTarget.RECENTS);
         Log.d(TAG, "onGestureAnimationEnd - mEnableDrawingLiveTile: " + mEnableDrawingLiveTile);
+        setRunningTaskViewShowScreenshot(true);
         setRunningTaskHidden(false);
         startIconFadeInOnGestureComplete();
         animateActionsViewIn();
