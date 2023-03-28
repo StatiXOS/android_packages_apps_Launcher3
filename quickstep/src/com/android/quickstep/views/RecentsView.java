@@ -2740,6 +2740,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         setEnableFreeScroll(true);
         setEnableDrawingLiveTile(mCurrentGestureEndTarget == GestureState.GestureEndTarget.RECENTS);
         Log.d(TAG, "onGestureAnimationEnd - mEnableDrawingLiveTile: " + mEnableDrawingLiveTile);
+        setRunningTaskViewShowScreenshot(true);
         setRunningTaskHidden(false);
         animateUpTaskIconScale();
         animateActionsViewIn();
