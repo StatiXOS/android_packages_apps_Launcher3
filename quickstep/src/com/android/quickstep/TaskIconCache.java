@@ -32,6 +32,7 @@ import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.SparseArray;
+import android.view.accessibility.AccessibilityManager;
 
 import androidx.annotation.WorkerThread;
 
@@ -46,7 +47,6 @@ import com.android.launcher3.util.CancellableTask;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.DisplayInfoChangeListener;
 import com.android.launcher3.util.DisplayController.Info;
-import com.android.launcher3.util.FlagOp;
 import com.android.launcher3.util.Preconditions;
 import com.android.quickstep.util.TaskKeyLruCache;
 import com.android.quickstep.util.TaskVisualsChangeListener;
@@ -63,6 +63,7 @@ import java.util.function.Consumer;
 public class TaskIconCache implements DisplayInfoChangeListener {
 
     private final Executor mBgExecutor;
+    private final AccessibilityManager mAccessibilityManager;
 
     private final Context mContext;
     private final TaskKeyLruCache<TaskCacheEntry> mIconCache;
@@ -79,6 +80,7 @@ public class TaskIconCache implements DisplayInfoChangeListener {
     public TaskIconCache(Context context, Executor bgExecutor, IconProvider iconProvider) {
         mContext = context;
         mBgExecutor = bgExecutor;
+        mAccessibilityManager = context.getSystemService(AccessibilityManager.class);
         mIconProvider = iconProvider;
 
         Resources res = context.getResources();
@@ -232,11 +234,14 @@ public class TaskIconCache implements DisplayInfoChangeListener {
             if ((index = mDefaultIcons.indexOfKey(userId)) >= 0) {
                 return mDefaultIcons.valueAt(index).newIcon(mContext);
             } else {
-                BitmapInfo info = mDefaultIconBase.withFlags(
-                        UserCache.INSTANCE.get(mContext).getUserInfo(UserHandle.of(userId))
-                                .applyBitmapInfoFlags(FlagOp.NO_OP));
-                mDefaultIcons.put(userId, info);
-                return info.newIcon(mContext);
+                try (BaseIconFactory li = getIconFactory()) {
+                    BitmapInfo info = mDefaultIconBase.withFlags(
+                            li.getBitmapFlagOp(new IconOptions()
+                                    .setUser(UserCache.INSTANCE.get(mContext)
+                                            .getUserInfo(UserHandle.of(userId)))));
+                    mDefaultIcons.put(userId, info);
+                    return info.newIcon(mContext);
+                }
             }
         }
     }
