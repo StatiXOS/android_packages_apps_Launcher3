@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a583281c_7a5dd6a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-28T15:15:09Z",
+      "side": 1,
+      "message": "I think we can do a lot of this in stx launcher, but not sure if this is needed",
+      "revId": "5eb5331919197c82aa245610dde1d36ac194b38a",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
