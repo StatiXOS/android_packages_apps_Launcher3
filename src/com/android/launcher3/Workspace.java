@@ -3574,10 +3574,20 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
      * </p>
      */
     protected void updateAccessibilityViewPageDescription() {
+        if (mLauncher == null) {
+            return;
+        }
+
         // Set the state description on accessibility action view so that when it is focused,
         // talkback describes the correct state of home screen pages.
-        ViewCompat.setStateDescription(mLauncher.getAccessibilityActionView(),
-                getCurrentPageDescription());
+        // Initialize for null pointer checks
+        View accessibilityActionView = mLauncher.getAccessibilityActionView();
+        if (accessibilityActionView != null) {
+            String description = getCurrentPageDescription();
+            if (description != null) {
+                ViewCompat.setStateDescription(accessibilityActionView, description);
+            }
+        }
     }
 
     @Override
